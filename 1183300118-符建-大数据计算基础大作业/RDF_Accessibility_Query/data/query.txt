@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ub: <hit#>
+
+SELECT ?teacherOf
+WHERE  
+{<http://www.Department2.University50.edu/FullProfessor3>  FullProfessor3 rdf:about :FullProfessor
+ <http://www.Department2.University50.edu/FullProfessor3> : teacherOf ?c
+ ?c :about ?n
+FILTER（?n == "http://www.Department2.University50.edu/Course5"）
+}
+
